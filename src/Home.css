@@ -1,12 +1,24 @@
-.App-Home-Row{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.App-Home-Row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.App-Home-Row div{
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid gray;
-    border-radius: 10px;
+.App-Home-Row div {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.App-Home-Row button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: lightblue;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.App-Home-Row button:hover {
+  background-color: deepskyblue;
 }

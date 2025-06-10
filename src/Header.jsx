@@ -6,7 +6,7 @@ import { AppContext } from "./App";
 export default function Header({ name }) {
   const { email } = useContext(AppContext);
   return (
-    <div className="App-Header-Row" style={{ backgroundColor: "pink" }}>
+    <div className="App-Header-Row" >
       <div>
         <h1>{name}</h1>
       </div>

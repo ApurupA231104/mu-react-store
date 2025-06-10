@@ -1,7 +1,7 @@
 .App-Header-Row{
     display: flex;
     justify-content: space-between;
-    background-color: orange;
+    background-color: salmon;
 }
 
 .App-Header-Row div{
