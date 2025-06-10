@@ -6,7 +6,7 @@ import { AppContext } from "./App";
 export default function Header({ name }) {
   const { email } = useContext(AppContext);
   return (
-    <div className="App-Header-Row" >
+    <div className="App-Header-Row" style={{ backgroundColor: "pink" }}>
       <div>
         <h1>{name}</h1>
       </div>
@@ -21,7 +21,10 @@ export default function Header({ name }) {
 
           <li>
             {email ? (
-              <Link to="/logout">Logout</Link>
+              <>
+                <Link to="/order">Order</Link>-
+                <Link to="/logout">Logout</Link>
+              </>
             ) : (
               <Link to="/login">Login</Link>
             )}

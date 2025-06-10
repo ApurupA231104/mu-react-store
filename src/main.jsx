@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
+
 import { registerSW } from 'virtual:pwa-register';
 
 const updateSW = registerSW({
@@ -13,4 +14,5 @@ const updateSW = registerSW({
     console.log("App is ready to work offline.");
   }
 });
+
 createRoot(document.getElementById("root")).render(<App />);

@@ -1,4 +1,5 @@
 .App-Footer-Row{
-    background-color: silver;
+    background-color: lightgray;
+    display: flex;
     padding: 10px;
 }
