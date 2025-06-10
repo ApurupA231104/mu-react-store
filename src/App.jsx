@@ -14,7 +14,7 @@ function App() {
   const [users, setUsers] = useState([]);
   return (
     <div>
-      <AppContext.Provider value={{ user, setUser }}>
+      <AppContext.Provider value={{ user, setUser, users, setUsers }}>
         <BrowserRouter>
           <Header name="mu-react-store" />
           <Routes>

@@ -1,22 +1,25 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useState, useContext } from "react";
 import { AppContext } from "./App";
 export default function Register() {
-const { user, setUser } = useContext(AppContext);
+  const { user, setUser, users, setUsers } = useContext(AppContext);
   const [count, setCount] = useState(0);
   const [a, setA] = useState(0);
   const [b, setB] = useState(0);
   const [result, setResult] = useState();
+
   const handleClick = () => {
     alert("Hello World");
   };
   const updateCount = () => {
     setCount(count + 1);
   };
-
   const findSum = () => {
     setResult(Number(a) + Number(b));
+  };
+  const handleSubmit = () => {
+    setUsers([...users, user]);
+    console.log(users);
   };
   return (
     <div>
@@ -43,7 +46,7 @@ const { user, setUser } = useContext(AppContext);
         />
       </p>
       <p>
-        <button onClick={() => console.log(user)}>Submit</button>
+        <button onClick={handleSubmit}>Submit</button>
       </p>
       <hr />
       <p>
