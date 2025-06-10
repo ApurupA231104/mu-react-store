@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AppContext } from "./App";
 export default function Register() {
-  const [user, setUser] = useState({});
+const { user, setUser } = useContext(AppContext);
   const [count, setCount] = useState(0);
   const [a, setA] = useState(0);
   const [b, setB] = useState(0);
@@ -42,7 +43,7 @@ export default function Register() {
         />
       </p>
       <p>
-        <button>Submit</button>
+        <button onClick={() => console.log(user)}>Submit</button>
       </p>
       <hr />
       <p>
