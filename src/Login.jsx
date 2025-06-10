@@ -1,46 +1,41 @@
-import React from "react";
-import { useContext, useState } from "react";
-import { AppContext } from "./App";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AppContext } from "./App";
 export default function Login() {
-  const { users, setUser } = useContext(AppContext);
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const [user, setUser] = useState({});
+  const [error, setError] = useState();
+  const Navigate = useNavigate();
+  const { users } = useContext(AppContext);
   const handleSubmit = () => {
-    const found = users.find((u) => u.email === email && u.pass === pass);
-    if (found) {
-      setError("");
-      setUser(found);
-      navigate("/");
+    const found = users.find(
+      (elem) => elem.email === user.email && elem.pass === user.pass
+    );
+    if (!found) {
+      setError("Access Denied");
     } else {
-      setError("Access Denied: Invalid username or password");
+      Navigate("/");
     }
   };
   return (
     <div>
       <h2>Login Form</h2>
+      {error}
       <p>
         <input
           type="text"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
         />
       </p>
       <p>
         <input
           type="password"
-          placeholder="Password"
-          value={pass}
-          onChange={(e) => setPass(e.target.value)}
+          onChange={(e) => setUser({ ...user, pass: e.target.value })}
         />
       </p>
       <p>
         <button onClick={handleSubmit}>Login</button>
       </p>
-      {error && <p style={{ color: "red" }}>{error}</p>}
       <hr />
       <p>
         <Link to="/register">Create Account</Link>

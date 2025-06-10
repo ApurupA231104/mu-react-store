@@ -10,11 +10,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 export const AppContext = createContext();
 function App() {
-  const [user, setUser] = useState({});
-  const [users, setUsers] = useState([]);
+  const [users,setUsers] = useState([])
   return (
     <div>
-      <AppContext.Provider value={{ user, setUser, users, setUsers }}>
+      <AppContext.Provider value={{users,setUsers}}>
         <BrowserRouter>
           <Header name="mu-react-store" />
           <Routes>
