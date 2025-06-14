@@ -36,7 +36,7 @@ export default function Home() {
       price: obj.price,
       desc: obj.desc,
       qty: 1,
-      email: email,
+      email:email,
     });
     Navigate("/cart");
   };

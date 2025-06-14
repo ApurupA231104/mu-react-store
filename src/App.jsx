@@ -9,6 +9,7 @@ import Cart from "./Cart";
 import Logout from "./Logout";
 import Order from "./Order";
 import Register from "./Register";
+import Product from "./Product";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 export const AppContext = createContext();
